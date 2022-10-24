@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'contact',
     'core',
     'social.apps.SocialConfig',
-    #'pages.apps.PagesConfig',
+    'pages.apps.PagesConfig',
     'services.apps.ServicesConfig'
     
 ]
