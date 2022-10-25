@@ -9,7 +9,7 @@ endblock %} {% block content %}
             <h2 class="section-heading mb-4">
               <span class="section-heading-lower">{{page.title}}</span>
             </h2>
-            <div class="section-content">
+           <div class="section-content">
               {{page.content|safe}} {% if user.is_authenticated %}
               <p>
                 <a href="{% url 'admin:pages_page_change' page.id %}">Editar</a>

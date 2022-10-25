@@ -99,9 +99,9 @@
           <!--<a href="sample.html" class="link">Política de privacidad</a> ·
           <a href="sample.html" class="link">Aviso legal</a> ·
           <a href="sample.html" class="link">Cookies</a>-->
-          {% comment %} {% load pages_extras %}
+          {% load pages_extras %}
           {% get_page_list as page_list %}
-          {% for page in page_list %}
+          {% comment %} {% for page in page_list %} 
             <a href="{% url 'page' page.id page.title|slugify %}" class="link">{{page.title}}</a> {% if not forloop.last %}·{% endif %} 
           {% endfor %} {% endcomment %}
         </p>
