@@ -5,7 +5,6 @@ from .forms import ContactForm
 
 # Create your views here.
 
-
 def contact(request):
     contact_form = ContactForm()
 
@@ -19,14 +18,13 @@ def contact(request):
             # Creamos el correo
             email = EmailMessage(
                 "La Caffettiera: Nuevo mensaje de contacto",
-                "De {} <{}>\n\nEscribió:\n\n{}".format(
-                    name, email, content),
+                "De {} <{}>\n\nEscribió:\n\n{}".format(name, email, content),
                 "no-contestar@inbox.mailtrap.io",
-                ["cmateluna@fundacioncchc.cl"],
+                ["django@hektorprofe.net"],
                 reply_to=[email]
             )
-            
-             # Lo enviamos y redireccionamos
+
+            # Lo enviamos y redireccionamos
             try:
                 email.send()
                 # Todo ha ido bien, redireccionamos a OK
@@ -36,6 +34,3 @@ def contact(request):
                 return redirect(reverse('contact')+"?fail")
     
     return render(request, "contact/contact.html",{'form':contact_form})
-
-                     
-            
